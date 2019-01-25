@@ -24,27 +24,27 @@ import {
 const HomeStack = createStackNavigator({
     Home: {
         screen: Home,
-        // navigationOptions: ({navigation}) => ({header: null})
+        navigationOptions: ({navigation}) => ({header: null})
     },
 });
 const GenerIndexStack = createStackNavigator({
     GenerIndex: {
         screen: GenerIndex,
-        // navigationOptions: ({navigation}) => ({header: null, gesturesEnable: true})
+        navigationOptions: ({navigation}) => ({header: null, gesturesEnable: true})
     },
 });
 
 const PersoncenterStack = createStackNavigator({
     Personcenter: {
         screen: Personcenter,
-        // navigationOptions: ({navigation}) => ({header:null, gesturesEnable:true})
+        navigationOptions: ({navigation}) => ({header:null, gesturesEnable:true})
     },
 });
 
 const TeamStack = createStackNavigator({
     Team: {
         screen: Team,
-        // navigationOptions: ({navigation}) => ({header: null, gesturesEnable: true})
+        navigationOptions: ({navigation}) => ({header: null, gesturesEnable: true})
     }
 });
 
