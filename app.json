@@ -1,4 +1,10 @@
 {
   "name": "AwesomeProject",
-  "displayName": "AwesomeProject"
+  "displayName": "AwesomeProject",
+  "expo": {
+    "slug": "AwesomeProject",
+    "name": "AwesomeProject",
+    "sdkVersion": "32.0.0",
+    "entryPoint": "e:\\AwesomeProject\\.vscode\\exponentIndex.js"
+  }
 }
