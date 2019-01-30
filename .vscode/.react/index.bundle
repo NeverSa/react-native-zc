@@ -86256,9 +86256,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _Team = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "../view/Team"));
 
-  var _reactNavigation = _$$_REQUIRE(_dependencyMap[7], "react-navigation");
+  var _accountInfo = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "../view/accountInfo"));
 
-  var _jsxFileName = "E:\\AwesomeProject\\node_modules\\react-native\\scripts\\app\\router\\RouteConfig.js";
+  var _reactNavigation = _$$_REQUIRE(_dependencyMap[8], "react-navigation");
+
+  var _jsxFileName = "e:\\AwesomeProject\\app\\router\\RouteConfig.js";
   var HomeStack = (0, _reactNavigation.createStackNavigator)({
     Home: {
       screen: _Home.default,
@@ -86268,6 +86270,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           header: null
         };
       }
+    },
+    AccountInfo: {
+      screen: _accountInfo.default
     }
   });
   var GenerIndexStack = (0, _reactNavigation.createStackNavigator)({
@@ -86306,15 +86311,30 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }
   });
+  var Stacks = [HomeStack, GenerIndexStack, TeamStack, PersoncenterStack];
+  Stacks.forEach(function (item) {
+    item.navigationOptions = function (_ref5) {
+      var navigation = _ref5.navigation;
+      var tabBarVisible = true;
+
+      if (navigation.state.index > 0) {
+        tabBarVisible = false;
+      }
+
+      return {
+        tabBarVisible: tabBarVisible
+      };
+    };
+  });
 
   var _default = (0, _reactNavigation.createAppContainer)((0, _reactNavigation.createBottomTabNavigator)({
     Home: {
       screen: HomeStack,
       navigationOptions: {
         tabBarLabel: '首页',
-        tabBarIcon: function tabBarIcon(_ref5) {
-          var tintColor = _ref5.tintColor,
-              focused = _ref5.focused;
+        tabBarIcon: function tabBarIcon(_ref6) {
+          var tintColor = _ref6.tintColor,
+              focused = _ref6.focused;
 
           if (focused) {
             return _react.default.createElement(_reactNative.Image, {
@@ -86327,7 +86347,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 85
+                lineNumber: 103
               }
             });
           } else {
@@ -86341,7 +86361,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 98
+                lineNumber: 116
               }
             });
           }
@@ -86352,9 +86372,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       screen: TeamStack,
       navigationOptions: {
         tabBarLabel: '团队',
-        tabBarIcon: function tabBarIcon(_ref6) {
-          var tintColor = _ref6.tintColor,
-              focused = _ref6.focused;
+        tabBarIcon: function tabBarIcon(_ref7) {
+          var tintColor = _ref7.tintColor,
+              focused = _ref7.focused;
 
           if (focused) {
             return _react.default.createElement(_reactNative.Image, {
@@ -86367,7 +86387,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 124
+                lineNumber: 142
               }
             });
           } else {
@@ -86381,7 +86401,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 137
+                lineNumber: 155
               }
             });
           }
@@ -86392,9 +86412,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       screen: GenerIndexStack,
       navigationOptions: {
         tabBarLabel: '推广',
-        tabBarIcon: function tabBarIcon(_ref7) {
-          var tintColor = _ref7.tintColor,
-              focused = _ref7.focused;
+        tabBarIcon: function tabBarIcon(_ref8) {
+          var tintColor = _ref8.tintColor,
+              focused = _ref8.focused;
 
           if (focused) {
             return _react.default.createElement(_reactNative.Image, {
@@ -86407,7 +86427,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 162
+                lineNumber: 180
               }
             });
           } else {
@@ -86421,7 +86441,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 175
+                lineNumber: 193
               }
             });
           }
@@ -86432,9 +86452,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       screen: PersoncenterStack,
       navigationOptions: {
         tabBarLabel: '我的',
-        tabBarIcon: function tabBarIcon(_ref8) {
-          var tintColor = _ref8.tintColor,
-              focused = _ref8.focused;
+        tabBarIcon: function tabBarIcon(_ref9) {
+          var tintColor = _ref9.tintColor,
+              focused = _ref9.focused;
 
           if (focused) {
             return _react.default.createElement(_reactNative.Image, {
@@ -86447,7 +86467,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 200
+                lineNumber: 218
               }
             });
           } else {
@@ -86461,7 +86481,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 213
+                lineNumber: 231
               }
             });
           }
@@ -86470,13 +86490,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   }, {
     initialRouteName: 'Home',
-    defaultNavigationOptions: function defaultNavigationOptions(_ref9) {
-      var navigation = _ref9.navigation;
+    defaultNavigationOptions: function defaultNavigationOptions(_ref10) {
+      var navigation = _ref10.navigation;
       return {
-        tabBarIcon: function tabBarIcon(_ref10) {
-          var focused = _ref10.focused,
-              horizontal = _ref10.horizontal,
-              tintColor = _ref10.tintColor;
+        tabBarIcon: function tabBarIcon(_ref11) {
+          var focused = _ref11.focused,
+              horizontal = _ref11.horizontal,
+              tintColor = _ref11.tintColor;
           var routeName = navigation.state.routeName;
         }
       };
@@ -86488,7 +86508,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }));
 
   exports.default = _default;
-},541,[1,46,2,542,543,544,545,546],"app\\router\\RouteConfig.js");
+},541,[1,46,2,542,543,544,545,672,546],"app\\router\\RouteConfig.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -86638,19 +86658,28 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var Home = _wrapComponent("Home")(function (_React$Component) {
     (0, _inherits2.default)(Home, _React$Component);
 
-    function Home() {
+    function Home(props) {
+      var _this;
+
       (0, _classCallCheck2.default)(this, Home);
-      return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Home).apply(this, arguments));
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Home).call(this, props));
+      _this.state = {
+        eye: true
+      };
+      alert(0);
+      return _this;
     }
 
     (0, _createClass2.default)(Home, [{
       key: "render",
       value: function render() {
+        var _this2 = this;
+
         return _react.default.createElement(_reactNative.View, {
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 6
+            lineNumber: 21
           }
         }, _react.default.createElement(_reactNative.View, {
           style: {
@@ -86661,7 +86690,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 7
+            lineNumber: 22
           }
         }, _react.default.createElement(_reactNative.View, {
           style: {
@@ -86669,7 +86698,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 15
+            lineNumber: 30
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: {
@@ -86681,7 +86710,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 16
+            lineNumber: 31
           }
         }, "1\u670828"), _react.default.createElement(_reactNative.Text, {
           style: {
@@ -86691,7 +86720,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 27
+            lineNumber: 42
           }
         }, "\u661F\u671F-")), _react.default.createElement(_reactNative.View, {
           style: {
@@ -86699,7 +86728,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 52
           }
         }, _react.default.createElement(_reactNative.Image, {
           source: {
@@ -86711,13 +86740,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 53
           }
         }))), _react.default.createElement(_reactNative.View, {
           style: styles.topcontant,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 63
           }
         }, _react.default.createElement(_reactNative.View, {
           style: {
@@ -86726,7 +86755,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49
+            lineNumber: 64
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: {
@@ -86736,9 +86765,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 65
           }
-        }, "89,568.00"), _react.default.createElement(_reactNative.Image, {
+        }, this.state.eye ? "89,568.00" : "****"), _react.default.createElement(_reactNative.Image, {
           source: {
             uri: "https://agency-h5.oss-cn-beijing.aliyuncs.com/home/money-jian.png"
           },
@@ -86749,7 +86778,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 53
+            lineNumber: 68
           }
         }), _react.default.createElement(_reactNative.View, {
           style: {
@@ -86758,9 +86787,19 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 60
+            lineNumber: 75
           }
-        }, _react.default.createElement(_reactNative.Image, {
+        }, _react.default.createElement(_reactNative.TouchableOpacity, {
+          onPress: function onPress() {
+            _this2.setState({
+              eye: !_this2.state.eye
+            });
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 76
+          }
+        }, this.state.eye == true ? _react.default.createElement(_reactNative.Image, {
           source: {
             uri: "https://agency-h5.oss-cn-beijing.aliyuncs.com/home/eye-icon.png"
           },
@@ -86770,9 +86809,21 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 61
+            lineNumber: 82
           }
-        }))), _react.default.createElement(_reactNative.View, {
+        }) : _react.default.createElement(_reactNative.Image, {
+          source: {
+            uri: "https://agency-h5.oss-cn-beijing.aliyuncs.com/home/eye-closed.png"
+          },
+          style: {
+            height: 14,
+            width: 14
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 90
+          }
+        })))), _react.default.createElement(_reactNative.View, {
           style: {
             borderBottomWidth: 1,
             borderColor: "rgba(255, 255, 255, 0.1)",
@@ -86781,7 +86832,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 101
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: {
@@ -86791,7 +86842,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 109
           }
         }, "\u8D26\u6237\u603B\u989D")), _react.default.createElement(_reactNative.View, {
           style: {
@@ -86801,60 +86852,340 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 83
+            lineNumber: 114
           }
         }, _react.default.createElement(_reactNative.View, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 90
+            lineNumber: 121
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.text1,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 91
+            lineNumber: 122
           }
-        }, "20,000,000.00"), _react.default.createElement(_reactNative.Text, {
+        }, this.state.eye ? "20,000.00" : "****"), _react.default.createElement(_reactNative.Text, {
           style: styles.text2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92
+            lineNumber: 125
           }
         }, "\u53EF\u63D0\u73B0\u91D1\u989D(\u5143)")), _react.default.createElement(_reactNative.View, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 94
+            lineNumber: 127
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.text1,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 95
+            lineNumber: 128
           }
-        }, "20,000,000.00"), _react.default.createElement(_reactNative.Text, {
+        }, this.state.eye ? "20,000.00" : "****"), _react.default.createElement(_reactNative.Text, {
           style: styles.text2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 96
+            lineNumber: 131
           }
         }, "\u672C\u6708\u6536\u76CA(\u5143)")), _react.default.createElement(_reactNative.View, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 98
+            lineNumber: 133
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.text1,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 99
+            lineNumber: 134
           }
-        }, "20,000,000.00"), _react.default.createElement(_reactNative.Text, {
+        }, this.state.eye ? "20,000.00" : "****"), _react.default.createElement(_reactNative.Text, {
           style: styles.text2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 100
+            lineNumber: 137
           }
-        }, "\u7D2F\u8BA1\u6536\u76CA(\u5143)")))));
+        }, "\u7D2F\u8BA1\u6536\u76CA(\u5143)")))), _react.default.createElement(_reactNative.View, {
+          style: styles.bank,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 142
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: styles.bankitem,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 143
+          }
+        }, _react.default.createElement(_reactNative.Image, {
+          source: {
+            uri: "https://agency-h5.oss-cn-beijing.aliyuncs.com/home/bank-icon.png"
+          },
+          style: {
+            width: 28,
+            height: 19,
+            marginRight: 10
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 144
+          }
+        }), _react.default.createElement(_reactNative.Text, {
+          style: {
+            marginRight: 30,
+            color: "#333",
+            fontSize: 14
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 151
+          }
+        }, "\u94F6\u884C\u5361")), _react.default.createElement(_reactNative.View, {
+          style: styles.bankitem,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 155
+          }
+        }, _react.default.createElement(_reactNative.Image, {
+          source: {
+            uri: "https://agency-h5.oss-cn-beijing.aliyuncs.com/home/withdraw-icon.png"
+          },
+          style: {
+            width: 28,
+            height: 19,
+            marginLeft: 30,
+            marginRight: 10
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 156
+          }
+        }), _react.default.createElement(_reactNative.Text, {
+          style: {
+            color: "#333",
+            fontSize: 14
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 163
+          }
+        }, "\u63D0\u73B0"))), _react.default.createElement(_reactNative.View, {
+          style: styles.mydatatitle,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 167
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: {
+            fontSize: 17,
+            fontWeight: "bold",
+            color: "#333"
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 168
+          }
+        }, "\u6211\u7684\u6570\u636E")), _react.default.createElement(_reactNative.TouchableOpacity, {
+          onPress: function onPress() {
+            return _this2.props.navigation.push("AccountInfo");
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 172
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: styles.listnav,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 175
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: {
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 176
+          }
+        }, _react.default.createElement(_reactNative.Image, {
+          source: {
+            uri: "https://agency-h5.oss-cn-beijing.aliyuncs.com/home/earnings.png"
+          },
+          style: {
+            width: 38,
+            height: 38,
+            marginRight: 16
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 183
+          }
+        }), _react.default.createElement(_reactNative.Text, {
+          style: styles.listtext,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 190
+          }
+        }, "\u4ECA\u65E5\u6536\u76CA(\u5143)")), _react.default.createElement(_reactNative.View, {
+          style: {
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 192
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.listtext2,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 199
+          }
+        }, "200.00"), _react.default.createElement(_reactNative.Image, {
+          source: {
+            uri: "https://agency-h5.oss-cn-beijing.aliyuncs.com/home/my-data.png"
+          },
+          style: {
+            width: 8,
+            height: 14,
+            marginRight: 16
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 200
+          }
+        })))), _react.default.createElement(_reactNative.View, {
+          style: styles.listnav,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 210
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: {
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 211
+          }
+        }, _react.default.createElement(_reactNative.Image, {
+          source: {
+            uri: "https://agency-h5.oss-cn-beijing.aliyuncs.com/home/team-icon.png"
+          },
+          style: {
+            width: 38,
+            height: 38,
+            marginRight: 16
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 218
+          }
+        }), _react.default.createElement(_reactNative.Text, {
+          style: styles.listtext,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 225
+          }
+        }, "\u56E2\u961F\u65B0\u589E(\u4EBA)")), _react.default.createElement(_reactNative.View, {
+          style: {
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 227
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.listtext2,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 234
+          }
+        }, "200.00"), _react.default.createElement(_reactNative.Image, {
+          source: {
+            uri: "https://agency-h5.oss-cn-beijing.aliyuncs.com/home/my-data.png"
+          },
+          style: {
+            width: 8,
+            height: 14,
+            marginRight: 16
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 235
+          }
+        }))), _react.default.createElement(_reactNative.View, {
+          style: styles.listnav,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 245
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: {
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 246
+          }
+        }, _react.default.createElement(_reactNative.Image, {
+          source: {
+            uri: "https://agency-h5.oss-cn-beijing.aliyuncs.com/home/earnings-icon.png"
+          },
+          style: {
+            width: 38,
+            height: 38,
+            marginRight: 16
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 253
+          }
+        }), _react.default.createElement(_reactNative.Text, {
+          style: styles.listtext,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 260
+          }
+        }, "\u6536\u76CA\u8BB0\u5F55")), _react.default.createElement(_reactNative.View, {
+          style: {
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center"
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 262
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.listtext2,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 269
+          }
+        }, "200.00"), _react.default.createElement(_reactNative.Image, {
+          source: {
+            uri: "https://agency-h5.oss-cn-beijing.aliyuncs.com/home/my-data.png"
+          },
+          style: {
+            width: 8,
+            height: 14,
+            marginRight: 16
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 270
+          }
+        }))));
       }
     }]);
     return Home;
@@ -86864,6 +87195,49 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   exports.default = _default2;
 
   var styles = _reactNative.StyleSheet.create({
+    listnav: {
+      flexDirection: "row",
+      paddingTop: 19,
+      paddingBottom: 19,
+      paddingLeft: 20,
+      paddingRight: 20,
+      backgroundColor: "#FAFAFA",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginBottom: 12
+    },
+    listtext: {
+      color: "#333333",
+      fontSize: 14,
+      marginLeft: 16
+    },
+    listtext2: {
+      color: "#333333",
+      fontSize: 14,
+      fontWeight: "bold",
+      marginRight: 16
+    },
+    listleft: {
+      flexDirection: "row"
+    },
+    mydatatitle: {
+      marginTop: 28,
+      borderColor: "#F23030",
+      borderLeftWidth: 4,
+      paddingLeft: 10,
+      marginBottom: 10
+    },
+    bankitem: {
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center"
+    },
+    bank: {
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "row",
+      marginTop: 30
+    },
     text1: {
       fontSize: 13,
       color: "#fff",
@@ -106389,6 +106763,119 @@ __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   }
 };
 },671,[],"app.json");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./../../node_modules/react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
+
+  var _class,
+      _temp,
+      _jsxFileName = "e:\\AwesomeProject\\app\\view\\accountInfo.js";
+
+  var _components = {
+    AccountInfo: {
+      displayName: "AccountInfo"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "e:\\AwesomeProject\\app\\view\\accountInfo.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var AccountInfo = _wrapComponent("AccountInfo")((_temp = _class = function (_React$Component) {
+    (0, _inherits2.default)(AccountInfo, _React$Component);
+
+    function AccountInfo() {
+      (0, _classCallCheck2.default)(this, AccountInfo);
+      return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(AccountInfo).apply(this, arguments));
+    }
+
+    (0, _createClass2.default)(AccountInfo, [{
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.View, {
+          style: styles.container,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20
+          }
+        }, "\u8D26\u6237\u4FE1\u606F"));
+      }
+    }]);
+    return AccountInfo;
+  }(_react.default.Component), _class.navigationOptions = {
+    tabBarVisible: false,
+    headerTitle: _react.default.createElement(_reactNative.Text, {
+      style: {
+        flex: 1,
+        textAlign: 'center'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      }
+    }, "\u8D26\u6237\u4FE1\u606F"),
+    headerRight: _react.default.createElement(_reactNative.View, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      }
+    })
+  }, _temp));
+
+  var _default2 = AccountInfo;
+  exports.default = _default2;
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#F5FCFF'
+    },
+    button: {
+      width: 120,
+      height: 45,
+      borderRadius: 5,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#4398ff'
+    }
+  });
+},672,[1,19,20,27,30,33,46,184,2],"app\\view\\accountInfo.js");
 __r(82);
 __r(0);
 //# sourceMappingURL=index.map

@@ -9,6 +9,7 @@ import GenerIndex from '../view/GenerIndex'
 import Home from '../view/Home'
 import Personcenter from '../view/Personcenter'
 import Team from '../view/Team'
+import AccountInfo from '../view/accountInfo'
 import {
     createAppContainer,
     createStackNavigator,
@@ -34,6 +35,9 @@ const HomeStack = createStackNavigator({
             header: null
         })
     },
+    AccountInfo:{
+        screen: AccountInfo,
+    }
 });
 const GenerIndexStack = createStackNavigator({
     GenerIndex: {
@@ -70,6 +74,20 @@ const TeamStack = createStackNavigator({
         })
     }
 });
+//除首层外隐藏tabbar
+const Stacks = [HomeStack, GenerIndexStack, TeamStack,PersoncenterStack]
+Stacks.forEach((item) => {
+  item.navigationOptions = ({ navigation }) => {
+    let tabBarVisible = true
+    if (navigation.state.index > 0) {
+      tabBarVisible = false
+    }
+    return {
+      tabBarVisible,
+    }
+  }
+})
+
 
 export default createAppContainer(
     createBottomTabNavigator({
