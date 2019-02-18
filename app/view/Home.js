@@ -49,6 +49,9 @@ export default class Home extends React.Component {
             </Text>
           </View>
           <View style={{ paddingTop: 5 }}>
+          <TouchableOpacity
+          onPress={() => this.props.navigation.push("Message")}
+          >
             <Image
               source={{
                 uri:
@@ -56,6 +59,7 @@ export default class Home extends React.Component {
               }}
               style={{ height: 18, width: 19 }}
             />
+             </TouchableOpacity>
           </View>
         </View>
 

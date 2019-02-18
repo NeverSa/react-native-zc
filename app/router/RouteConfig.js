@@ -10,6 +10,7 @@ import Home from '../view/Home'
 import Personcenter from '../view/Personcenter'
 import Team from '../view/Team'
 import AccountInfo from '../view/accountInfo'
+import Message from "../view/home/message"
 import {
     createAppContainer,
     createStackNavigator,
@@ -37,6 +38,9 @@ const HomeStack = createStackNavigator({
     },
     AccountInfo:{
         screen: AccountInfo,
+    },
+    Message:{
+        screen: Message,  
     }
 });
 const GenerIndexStack = createStackNavigator({
